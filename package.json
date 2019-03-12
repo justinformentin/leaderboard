@@ -1,0 +1,16 @@
+{
+  "name": "leaderboard-scores",
+  "version": "1.0.0",
+  "description": "GraphQL, React, Apollo, Mongo CRUD",
+  "scripts": {
+    "server":"node server/index.js",
+    "client":"cd client && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinformentin/leaderboard-scores.git"
+  },
+  "keywords": [],
+  "author": "Justin Formentin",
+  "license": "ISC"
+}
