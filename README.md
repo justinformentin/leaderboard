@@ -11,4 +11,5 @@ npm start # Run client
 ```
 
 localhost:3000 for the client
+
 localhost:4000 for the graphql playground
