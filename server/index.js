@@ -1,5 +1,5 @@
-const { GraphQLServer } = require('graphql-yoga')
-const mongoose = require('mongoose')
+const { GraphQLServer } = require('graphql-yoga');
+const mongoose = require('mongoose');
 
 mongoose.connect(
 	'mongodb://localhost:27017/leaderboard-scores',
@@ -57,7 +57,7 @@ const resolvers = {
 	Query: {
 		players: async (_, { n }) => {
 			if (!n) n = 100
-			const players = await Player.find({}).limit(n)
+			const players = await Player.find({}).sort({score: -1, lastname: 1}).limit(n)
 			if (players.length) return players
 		},
 		player: async (_, { firstname }) => {
