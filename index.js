@@ -1,8 +1,9 @@
 const { GraphQLServer } = require('graphql-yoga');
 const mongoose = require('mongoose');
+require("dotenv").config()
 
 mongoose.connect(
-	'mongodb://localhost:27017/leaderboard-scores',
+	process.env.MONGO_URI,
 	{
 		useNewUrlParser: true
 	}

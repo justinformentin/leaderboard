@@ -2,15 +2,21 @@
   "name": "leaderboard-scores",
   "version": "1.0.0",
   "description": "GraphQL, React, Apollo, Mongo CRUD",
-  "scripts": {
-    "server":"node server/index.js",
-    "client":"cd client && npm run start"
-  },
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/justinformentin/leaderboard-scores.git"
   },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [],
   "author": "Justin Formentin",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "graphql-yoga": "1.16.2",
+    "mongoose": "5.3.3"
+  }
 }
