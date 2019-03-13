@@ -23,9 +23,9 @@ const Player = mongoose.model('players', {
 const typeDefs = `
   type Player {
     id: ID!
-    firstname: String!
-    lastname: String!
-		score: Int!
+    firstname: String
+    lastname: String
+		score: Int
     createdAt: String!
     lastModified: String!
   }
@@ -44,9 +44,9 @@ const typeDefs = `
 
 		updatePlayer(
 			id: ID!,
-			firstname: String!,
-			lastname: String!,
-			score: Int!
+			firstname: String,
+			lastname: String,
+			score: Int
 		): Player
 
     removePlayer(id: ID!): ID!

@@ -38,12 +38,51 @@ GraphQL makes sorting very easy, and there are many options depending on how you
 I can't use that option because I'm using Apollo, and the queries through Apollo don't have access to orderBy. Fortunately there's another easy solution, and that's to just add a `.sort()` to the server-side `Query` resolver.
 
 ```js
+// /server/index.js
 const players = await Player.find({}).sort({score: -1, lastname: 1}).limit(n)
 ```
 
 The `-1` in `score: -1` denotes sorting the scores by descending, and the `1` in `lastname: 1` denotes sorting the lastname by ascending.
 
 The requirement mentioned score and lastname in ascending order, but the design sample showed descending score/ascending lastname, so I decided to stick with the design sample. In any case, changing the ordering is as easy as deleting or adding a `-`.
+
+## Adding/Editing Players
+I wanted to have the data inputs set so each field is required when you are creating a new player, but not required when you are editing a player. So if you want to change only the name or the score, it's possible. To do this, I set the typesDefs, resolvers, and inputs for the `Create` action as required, and set the `Update` action fields as not required:
+
+```js
+// /server/index.js
+    createPlayer(
+			firstname: String!,
+			lastname: String!,
+			score: Int!
+		): Player
+
+		updatePlayer(
+			id: ID!,
+			firstname: String,
+			lastname: String,
+			score: Int
+		): Player
+```
+
+```js
+// /cleitn/gql.js
+	mutation CreatePlayer($firstname: String!, $lastname: String!, $score: Int!) {
+
+	mutation UpdatePlayer($id: ID!, $firstname: String, $lastname: String, $score: Int) {
+```
+
+To allow for the `Update` to both not require all fields, and also not save a field as null, I set the variables as:
+```js
+// /client/containers/EditPlayer.js
+		updatePlayer({
+			variables: {
+				id,
+				firstname: firstname || props.player.firstname,
+			...
+```
+
+Which is "The set state of firstname from user input OR the existing player firstname props." This way feels kind of hackey, but adding an `||` statement was the simplest solution.
 
 ## Hooks
 This project was fun for me because I dove a little deeper into hooks than I have up to this point. I actually wrote much of the app using class components, but I decided to convert everything to hooks for the learning experience.

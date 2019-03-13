@@ -1,24 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom'
 import styled from 'styled-components';
+import { Container } from './Form.styles';
 
-const Container = styled.div`
-	margin: 2rem auto;
-	width: 30%;
-	background: #dee2e5;
-	display: flex;
-	justify-content: center;
-	border-radius: 10px;
-	@media only screen and (max-width: 1080px) {
-		width: 50%;
-	}
-	@media only screen and (max-width: 768px) {
-		width: 65%;
-	}
-	@media only screen and (max-width: 600px) {
-		width: 95%;
-	}
-`;
 const ModalCover = styled.aside`
   position: relative;
   top: 0;
@@ -69,7 +53,6 @@ const CloseButton = styled.button`
     stroke-width: 2;
   }
 `;
-
 
 function useClickOutside(ref, onModalClose) {
   function handleStatusChange(e) {

@@ -25,7 +25,7 @@ const CREATE_PLAYER = gql`
 	}
 `
 const UPDATE_PLAYER = gql`
-	mutation UpdatePlayer($id: ID!, $firstname: String!, $lastname: String!, $score: Int!) {
+	mutation UpdatePlayer($id: ID!, $firstname: String, $lastname: String, $score: Int) {
 		updatePlayer(id: $id, firstname: $firstname, lastname: $lastname, score: $score) {
 			id
 			firstname
