@@ -66,7 +66,7 @@ I wanted to have the data inputs set so each field is required when you are crea
 ```
 
 ```js
-// /cleitn/gql.js
+// /client/gql.js
 	mutation CreatePlayer($firstname: String!, $lastname: String!, $score: Int!) {
 
 	mutation UpdatePlayer($id: ID!, $firstname: String, $lastname: String, $score: Int) {
