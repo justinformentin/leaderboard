@@ -1,5 +1,7 @@
 # Score Leaderboard
 
+View Site: [https://leaderboard-scores.herokuapp.com](https://leaderboard-scores.herokuapp.com)
+
 Built using React, GraphQL, Apollo, and Mongo.
 
 Add, edit, and delete players on a score leaderboard. Players are ordered by last name and by score.
