@@ -1,4 +1,4 @@
-# Score Leaderboard
+# Code Test - Score Leaderboard
 
 View Site: [https://leaderboard-scores.herokuapp.com](https://leaderboard-scores.herokuapp.com)
 
