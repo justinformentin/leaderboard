@@ -52,17 +52,23 @@ const CreatePlayer = () => {
 							required
 							aria-label="First Name"
 							placeholder="First name"
-							type="text" {...bindFirstname} />
+							type="text"
+							{...bindFirstname}
+						/>
 						<input
 							required
 							aria-label="Last Name"
 							placeholder="Last name"
-							type="text" {...bindLastname} />
+							type="text"
+							{...bindLastname}
+						/>
 						<input
 							required
 							aria-label="Score"
 							placeholder="Score"
-							type="text" {...bindScore} />
+							type="text"
+							{...bindScore}
+						/>
 					<Button type="submit">
 						Add Player
 					</Button>
